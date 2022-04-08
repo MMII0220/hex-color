@@ -48,8 +48,11 @@ body {
   color: #212529;
   padding: 10px 15px;
   font-size: 1.2rem;
+  background-color: #f8f9fa;
 }
-
+.btn:hover {
+  background-color: #c3c5c8;
+}
 @keyframes colorChange {
   0% {
     background-color: gray;
