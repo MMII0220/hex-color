@@ -4,21 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function generateColor(btn) {
     let homePage = document.querySelector('.main');
 
-    btn.addEventListener('click', (el) => {
+    btn.addEventListener('click', () => {
       let r = Math.floor(Math.random() * 256),
         g = Math.floor(Math.random() * 256),
         b = Math.floor(Math.random() * 256),
-        a = Math.floor(Math.random() * 256),
-        aa = Math.floor(Math.random() * 256),
-        aaa = Math.floor(Math.random() * 256),
-        right = Math.floor(Math.random() * 255),
-        left = Math.floor(Math.random() * 255);
+        right = document.querySelector('.right'),
+        left = document.querySelector('.left');
+
+      left.textContent = `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+
+      right.textContent = `#${g.toString(16)}${b.toString(16)}${r.toString(
+        16
+      )}`;
 
       homePage.style.background = `linear-gradient(to right, #${r.toString(
         16
-      )}${b.toString(16)}${g.toString(16)}, #${a.toString(16)}${a.toString(
+      )}${g.toString(16)}${b.toString(16)}, #${g.toString(16)}${b.toString(
         16
-      )}${aa.toString(16)}${aaa.toString(16)})`;
+      )}${r.toString(16)})`;
     });
   }
 
